@@ -1,0 +1,95 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <div class="container-fluid">
+    <!-- Brand Logo and Name -->
+    <a class="navbar-brand text-white" href="#">
+      <img src="{% static 'images/djangoimg.png' %}" alt="Django logo" width="40" height="30" class="d-inline-block align-text-top me-2">
+      Django
+    </a>
+
+    <!-- Navbar Toggler for Mobile View -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links and Profile Dropdown -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <!-- User Profile Dropdown -->
+        <li class="nav-item dropdown">
+          <!-- Trigger for the dropdown: profile picture only -->
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{% static 'images/bg2.png' %}" alt="Profile" width="30" height="30" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Custom styles for the navbar -->
+<style>
+  /* Navbar adjustments */
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #fff7d5; /* Slightly lighter shade on hover */
+  }
+
+  /* Navbar toggler for mobile view */
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("{% static 'images/bg2.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Profile picture adjustments */
+  .navbar-nav .dropdown-toggle img {
+    border: 2px solid #fff;
+  }
+
+  /* Dropdown menu styles */
+  .dropdown-menu {
+    min-width: 200px;
+  }
+
+  /* Mobile view adjustments */
+  @media (max-width: 992px) {
+    .nav-link {
+      margin-right: 0;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .navbar-collapse {
+      justify-content: center;
+    }
+  }
+</style>

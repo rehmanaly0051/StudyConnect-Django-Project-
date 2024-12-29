@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{ obj }}"?</p>
+    
+    <!-- Link back to the specific room -->
+    <a href="{% url 'room' obj.pk %}">Go Back</a>
+    
+    <input type="submit" value="Confirm" />
+</form>
+
+{% endblock %}

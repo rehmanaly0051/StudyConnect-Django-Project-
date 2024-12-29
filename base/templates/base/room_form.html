@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+
+<style>
+    /* Main container styling */
+.form-container {
+    width: 400px; /* Adjust the width of the box */
+    margin: 50px auto; /* Centers the form horizontally */
+    padding: 20px; /* Adds padding inside the box */
+    background-color: #f9f9f9; /* Light background color for the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for the box */
+    border: 1px solid #ccc; /* Border around the box */
+}
+
+/* Style the form elements */
+input[type="Submit"] {
+    width: 100%; /* Full-width button */
+    padding: 10px; /* Padding for the button */
+    background-color: #4CAF50; /* Green background for the button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded button */
+    cursor: pointer; /* Hand cursor */
+    font-size: 16px; /* Larger font size */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+input[type="Submit"]:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Optional: Style form elements if necessary */
+input, textarea, select {
+    width: 100%; /* Full width input fields */
+    padding: 8px; /* Padding for inputs */
+    margin-bottom: 15px; /* Space between form fields */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+label {
+    font-weight: bold; /* Bold labels */
+}
+
+</style>
+
+
+{% block content %}
+<div class="form-container">
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="Submit" value="Submit" class="submit-btn">
+    </form>
+</div>
+{% endblock %}
